@@ -12,6 +12,7 @@ namespace SzamoloGep_Beadando
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -20,9 +21,11 @@ namespace SzamoloGep_Beadando
         }
         int eredmeny = 0;
         string aktszam = "";
+        string aktszam2 = "";
         double szam;
         bool vz = true;
         string muvelet = "";
+        bool muvelet_vane = false;
         private void ketto_nhatvanya_Click(object sender, EventArgs e)
         {
             vz = !vz;
@@ -46,6 +49,8 @@ namespace SzamoloGep_Beadando
         {
             label1.Text = "";
             aktszam = "";
+            aktszam2 = "";
+            muvelet_vane = false;
             szam = 0;
         }
 
@@ -76,6 +81,7 @@ namespace SzamoloGep_Beadando
         {
             double absszam = Math.Abs(Convert.ToDouble(aktszam));
             aktszam = Convert.ToString(absszam);
+            label1.Text = aktszam;
         }
 
         private void exp_Click(object sender, EventArgs e)
@@ -119,40 +125,62 @@ namespace SzamoloGep_Beadando
         private void osztas_Click(object sender, EventArgs e)
         {
             muvelet = "/";
+            muvelet_vane = true;
         }
 
         private void x_y_hatvanyon_Click(object sender, EventArgs e)
         {
-            double elsoszam = Convert.ToDouble(aktszam);
-            aktszam = "";
-            double masodikszam = Convert.ToDouble(aktszam);
-            double megoldas = Math.Pow(elsoszam, masodikszam);
-            aktszam = Convert.ToString(megoldas);
-            label1.Text = aktszam;
+            muvelet = "XonY";
+            muvelet_vane = true;
             //?
         }
 
         private void het_Click(object sender, EventArgs e)
         {
-            aktszam += "7";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "7";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "7";
+                label1.Text = aktszam2;
+            }
         }
 
         private void nyolc_Click(object sender, EventArgs e)
         {
-            aktszam += "8";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "8";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "8";
+                label1.Text = aktszam2;
+            }
         }
 
         private void kilenc_Click(object sender, EventArgs e)
         {
-            aktszam += "9";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "9";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "9";
+                label1.Text = aktszam2;
+            }
         }
 
         private void szorzas_Click(object sender, EventArgs e)
         {
             muvelet = "*";
+            muvelet_vane = true;
         }
 
         private void tiz_x_hatvanyon_Click(object sender, EventArgs e)
@@ -164,25 +192,50 @@ namespace SzamoloGep_Beadando
 
         private void negy_Click(object sender, EventArgs e)
         {
-            aktszam += "4";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "4";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "4";
+                label1.Text = aktszam2;
+            }
         }
 
         private void ot_Click(object sender, EventArgs e)
         {
-            aktszam += "5";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "5";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "5";
+                label1.Text = aktszam2;
+            }
         }
 
         private void hat_Click(object sender, EventArgs e)
         {
-            aktszam += "6";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "6";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "6";
+                label1.Text = aktszam2;
+            }
         }
 
         private void kivonas_Click(object sender, EventArgs e)
         {
             aktszam += "-";
+            muvelet_vane = true;
         }
 
         private void log_Click(object sender, EventArgs e)
@@ -192,25 +245,50 @@ namespace SzamoloGep_Beadando
 
         private void egy_Click(object sender, EventArgs e)
         {
-            aktszam += "1";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "1";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "1";
+                label1.Text = aktszam2;
+            }
         }
 
         private void ketto_Click(object sender, EventArgs e)
         {
-            aktszam += "2";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "2";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "2";
+                label1.Text = aktszam2;
+            }
         }
 
         private void harom_Click(object sender, EventArgs e)
         {
-            aktszam += "3";
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                aktszam += "3";
+                label1.Text = aktszam;
+            }
+            else if (muvelet_vane)
+            {
+                aktszam2 += "3";
+                label1.Text = aktszam2;
+            }
         }
 
         private void osszeadas_Click(object sender, EventArgs e)
         {
             muvelet = "+";
+            muvelet_vane = true;
         }
 
         private void In_Click(object sender, EventArgs e)
@@ -221,9 +299,15 @@ namespace SzamoloGep_Beadando
         private void button33_Click(object sender, EventArgs e)
         {
             //előjel csere
-            double megoldas = Convert.ToDouble(aktszam) * -1;
-            aktszam = Convert.ToString(megoldas);
-            label1.Text = aktszam;
+            try
+            {
+                double megoldas = Convert.ToDouble(aktszam) * -1;
+                aktszam = Convert.ToString(megoldas);
+                label1.Text = aktszam;
+            }
+            catch
+            {
+            }
         }
 
         private void nulla_Click(object sender, EventArgs e)
@@ -240,11 +324,43 @@ namespace SzamoloGep_Beadando
         private void kiszamol_Click(object sender, EventArgs e)
         {
             label1.Text = aktszam;
+            MuveletElvegzese();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void MuveletElvegzese()
+        {
+            if (muvelet == "+")
+            {
+                double a = Convert.ToDouble(aktszam2);
+                double b = Convert.ToDouble(aktszam);
+                aktszam = Convert.ToString(a + b);
+                label1.Text = aktszam;
+            }
+            else if (muvelet == "-")
+            {
+                double a = Convert.ToDouble(aktszam);
+                double b = Convert.ToDouble(aktszam2);
+                aktszam = Convert.ToString(a - b); // b - a
+                label1.Text = aktszam;
+            }
+            else if (muvelet == "*")
+            {
+                double a = Convert.ToDouble(aktszam);
+                double b = Convert.ToDouble(aktszam2);
+                aktszam = Convert.ToString(a * b);
+                label1.Text = aktszam;
+            }
+            else if (muvelet == "/")
+            {
+                double a = Convert.ToDouble(aktszam);
+                double b = Convert.ToDouble(aktszam2);
+                aktszam = Convert.ToString(a / b); // b / a
+                label1.Text = aktszam;
+            }
         }
     }
 }

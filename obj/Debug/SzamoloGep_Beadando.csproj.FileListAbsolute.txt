@@ -1,0 +1,10 @@
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\bin\Debug\SzamoloGep_Beadando.exe.config
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\bin\Debug\SzamoloGep_Beadando.exe
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\bin\Debug\SzamoloGep_Beadando.pdb
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.csproj.AssemblyReference.cache
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.Form1.resources
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.Properties.Resources.resources
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.csproj.GenerateResource.cache
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.csproj.CoreCompileInputs.cache
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.exe
+C:\Users\xboxh\Desktop\SzamoloGep_Beadando\obj\Debug\SzamoloGep_Beadando.pdb
