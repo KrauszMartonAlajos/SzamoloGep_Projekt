@@ -12,12 +12,12 @@ namespace SzamoloGep_Beadando
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
             label1.Text = "0";
-            
+
         }
         int eredmeny = 0;
         string aktszam = "";
@@ -63,12 +63,21 @@ namespace SzamoloGep_Beadando
 
         private void negyzet_Click(object sender, EventArgs e)
         {
-            double szamh = Convert.ToDouble(aktszam);
+            try
+            {
+                double szamh = Convert.ToDouble(aktszam);
 
-            szam = szamh * szamh;
+                szam = szamh * szamh;
 
-            label1.Text = Convert.ToString(szam);
-            aktszam = "";
+                label1.Text = Convert.ToString(szam);
+                aktszam = Convert.ToString(szam);
+                //aktszam = "";
+            }
+            catch
+            { 
+                
+            }
+            
         }
 
         private void reciprok_Click(object sender, EventArgs e)
@@ -114,7 +123,7 @@ namespace SzamoloGep_Beadando
         {
             double n = Convert.ToDouble(aktszam);
             double megoldas = 1;
-            for (int i = 1; i < n+1; i++)
+            for (int i = 1; i < n + 1; i++)
             {
                 megoldas *= i;
             }
@@ -139,11 +148,21 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                    aktszam = "";
+                }
                 aktszam += "7";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                    aktszam = "";
+                }
                 aktszam2 += "7";
                 label1.Text = aktszam2;
             }
@@ -153,11 +172,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "8";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "8";
                 label1.Text = aktszam2;
             }
@@ -167,11 +194,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "9";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "9";
                 label1.Text = aktszam2;
             }
@@ -185,7 +220,7 @@ namespace SzamoloGep_Beadando
 
         private void tiz_x_hatvanyon_Click(object sender, EventArgs e)
         {
-            double megoldas = Math.Pow(10,Convert.ToDouble(aktszam));
+            double megoldas = Math.Pow(10, Convert.ToDouble(aktszam));
             aktszam = Convert.ToString(megoldas);
             label1.Text = aktszam;
         }
@@ -194,11 +229,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "4";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "4";
                 label1.Text = aktszam2;
             }
@@ -208,11 +251,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "5";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "5";
                 label1.Text = aktszam2;
             }
@@ -222,11 +273,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "6";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "6";
                 label1.Text = aktszam2;
             }
@@ -238,7 +297,7 @@ namespace SzamoloGep_Beadando
             {
                 aktszam += "-";
             }
-            else 
+            else
             {
                 muvelet = "-";
                 muvelet_vane = true;
@@ -254,11 +313,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "1";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "1";
                 label1.Text = aktszam2;
             }
@@ -268,11 +335,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "2";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "2";
                 label1.Text = aktszam2;
             }
@@ -282,11 +357,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "3";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "3";
                 label1.Text = aktszam2;
             }
@@ -321,11 +404,19 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam += "0";
                 label1.Text = aktszam;
             }
             else if (muvelet_vane)
             {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                }
                 aktszam2 += "0";
                 label1.Text = aktszam2;
             }
@@ -356,8 +447,8 @@ namespace SzamoloGep_Beadando
                 aktszam2 = "";
             }
             catch
-            { 
-                
+            {
+
             }
         }
 
@@ -378,7 +469,7 @@ namespace SzamoloGep_Beadando
             {
                 double a = Convert.ToDouble(aktszam);
                 double b = Convert.ToDouble(aktszam2);
-                aktszam = Convert.ToString(a-b); // b - a
+                aktszam = Convert.ToString(a - b); // b - a
                 label1.Text = aktszam;
             }
             else if (muvelet == "*")
@@ -396,12 +487,19 @@ namespace SzamoloGep_Beadando
                 {
                     label1.Text = "Nullával nem lehet osztani";
                 }
-                else 
+                else
                 {
-                    
+
                     aktszam = Convert.ToString(a / b); // b / a
                     label1.Text = aktszam;
                 }
+            }
+            else if (muvelet == "XonY")
+            {
+                double a = Convert.ToDouble(aktszam);
+                double b = Convert.ToDouble(aktszam2);
+                aktszam = Convert.ToString(Math.Pow(a,b));
+                label1.Text = aktszam;
             }
         }
     }
