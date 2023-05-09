@@ -36,6 +36,7 @@ namespace SzamoloGep_Beadando
             double pi = Math.PI;
             szam = pi;
             aktszam = Convert.ToString(szam);
+            label1.Text = aktszam;
         }
 
         private void e_szam_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace SzamoloGep_Beadando
             double e_szam = Math.E;
             szam = e_szam;
             aktszam = Convert.ToString(szam);
+            label1.Text = aktszam;
         }
 
         private void clear_Click(object sender, EventArgs e)
@@ -82,8 +84,17 @@ namespace SzamoloGep_Beadando
 
         private void reciprok_Click(object sender, EventArgs e)
         {
-            double reciproka = 1 / Convert.ToDouble(aktszam);
-            aktszam = Convert.ToString(reciproka);
+            try
+            {
+
+                double reciproka = 1 / Convert.ToDouble(aktszam);
+                aktszam = Convert.ToString(reciproka);
+                label1.Text = aktszam;
+            }
+            catch
+            { 
+            
+            }
         }
 
         private void abs_Click(object sender, EventArgs e)
@@ -175,6 +186,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "8";
                 label1.Text = aktszam;
@@ -184,6 +196,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "8";
                 label1.Text = aktszam2;
@@ -197,6 +210,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "9";
                 label1.Text = aktszam;
@@ -206,6 +220,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "9";
                 label1.Text = aktszam2;
@@ -232,6 +247,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "4";
                 label1.Text = aktszam;
@@ -241,6 +257,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "4";
                 label1.Text = aktszam2;
@@ -254,6 +271,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "5";
                 label1.Text = aktszam;
@@ -263,6 +281,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "5";
                 label1.Text = aktszam2;
@@ -276,6 +295,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "6";
                 label1.Text = aktszam;
@@ -285,6 +305,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "6";
                 label1.Text = aktszam2;
@@ -316,6 +337,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "1";
                 label1.Text = aktszam;
@@ -325,6 +347,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "1";
                 label1.Text = aktszam2;
@@ -338,6 +361,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "2";
                 label1.Text = aktszam;
@@ -347,6 +371,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "2";
                 label1.Text = aktszam2;
@@ -360,6 +385,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "3";
                 label1.Text = aktszam;
@@ -369,6 +395,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "3";
                 label1.Text = aktszam2;
@@ -407,6 +434,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam += "0";
                 label1.Text = aktszam;
@@ -416,6 +444,7 @@ namespace SzamoloGep_Beadando
                 if (label1.Text == "0")
                 {
                     label1.Text = "";
+                    aktszam = "";
                 }
                 aktszam2 += "0";
                 label1.Text = aktszam2;
@@ -426,13 +455,27 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
-                aktszam += ",";
-                label1.Text = aktszam;
+                if (label1.Text == "")
+                {
+                    label1.Text = "Apad";
+                }
+                else
+                {
+                    aktszam += ",";
+                    label1.Text = aktszam;
+                }
+                
             }
             else if (muvelet_vane)
             {
-                aktszam2 += ",";
-                label1.Text = aktszam2;
+                if (label1.Text != "")
+                {
+                    aktszam2 += ",";
+                    label1.Text = aktszam2;
+                }
+                else
+                {
+                }
             }
         }
 
