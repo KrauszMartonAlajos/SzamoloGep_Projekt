@@ -130,6 +130,7 @@ namespace SzamoloGep_Beadando
                 {
                     aktszam = "0";
                     label1.Text = aktszam;
+                    aktszam2 = "";
 
                 }
             }
@@ -199,6 +200,8 @@ namespace SzamoloGep_Beadando
         {
             muvelet = "mod";
             muvelet_vane = true;
+            vanevesszo = false;
+
         }
 
         private void sqrt_Click(object sender, EventArgs e)
@@ -233,12 +236,16 @@ namespace SzamoloGep_Beadando
         {
             muvelet = "/";
             muvelet_vane = true;
+            vanevesszo = false;
+
         }
 
         private void x_y_hatvanyon_Click(object sender, EventArgs e)
         {
             muvelet = "XonY";
             muvelet_vane = true;
+            vanevesszo = false;
+
             //?
         }
 
@@ -318,6 +325,8 @@ namespace SzamoloGep_Beadando
         {
             muvelet = "*";
             muvelet_vane = true;
+            vanevesszo = false;
+
         }
 
         private void tiz_x_hatvanyon_Click(object sender, EventArgs e)
@@ -404,10 +413,13 @@ namespace SzamoloGep_Beadando
             if (aktszam == "")
             {
                 aktszam += "-";
+
             }
             else
             {
                 muvelet = "-";
+                vanevesszo = false;
+
                 muvelet_vane = true;
             }
         }
@@ -416,6 +428,8 @@ namespace SzamoloGep_Beadando
         {
             muvelet = "log";
             muvelet_vane = true;
+            vanevesszo = false;
+
         }
 
         private void egy_Click(object sender, EventArgs e)
@@ -494,6 +508,7 @@ namespace SzamoloGep_Beadando
         {
             muvelet = "+";
             muvelet_vane = true;
+            vanevesszo = false;
         }
 
         private void In_Click(object sender, EventArgs e)
@@ -541,12 +556,18 @@ namespace SzamoloGep_Beadando
             }
             else if (muvelet_vane)
             {
-                if (label1.Text == "0")
+                if (aktszam2.Length > 0)
                 {
-                    label1.Text = "";
-                    aktszam = "";
+                    if (aktszam2[0] != '0')
+                    {
+                        aktszam2 += "0";
+
+                    }
                 }
-                aktszam2 += "0";
+                else 
+                {
+                    aktszam2 += "0";
+                }
                 label1.Text = aktszam2;
             }
         }
@@ -580,8 +601,8 @@ namespace SzamoloGep_Beadando
             {
 
                 label1.Text = aktszam;
-                muvelet_vane = false;
                 MuveletElvegzese();
+                muvelet_vane = false;
                 aktszam2 = "";
                 vanevesszo = false;
             }
@@ -599,16 +620,23 @@ namespace SzamoloGep_Beadando
         {
             if (muvelet == "+")
             {
-                double a = Convert.ToDouble(aktszam2);
-                double b = Convert.ToDouble(aktszam);
-                aktszam = Convert.ToString(a + b);
+                if (label1.Text == "0")
+                {
+                    aktszam = aktszam2;
+                }
+                else
+                {
+                    double a = Convert.ToDouble(aktszam);
+                    double b = Convert.ToDouble(aktszam2);
+                    aktszam = Convert.ToString(a + b);
+                }
                 label1.Text = aktszam;
             }
             else if (muvelet == "-")
             {
                 double a = Convert.ToDouble(aktszam);
                 double b = Convert.ToDouble(aktszam2);
-                aktszam = Convert.ToString(a - b); // b - a
+                aktszam = Convert.ToString(a - b);
                 label1.Text = aktszam;
             }
             else if (muvelet == "*")
@@ -652,6 +680,10 @@ namespace SzamoloGep_Beadando
                 double a = Convert.ToDouble(aktszam);
                 double b = Convert.ToDouble(aktszam2);
                 aktszam = Convert.ToString(Math.Log(a, b));
+                label1.Text = aktszam;
+            }
+            else if (aktszam == "0")
+            {
                 label1.Text = aktszam;
             }
             
