@@ -35,18 +35,66 @@ namespace SzamoloGep_Beadando
 
         private void pi_Click(object sender, EventArgs e)
         {
-            double pi = Math.PI;
-            szam = pi;
-            aktszam = Convert.ToString(szam);
-            label1.Text = aktszam;
+            
+            if (!muvelet_vane)
+            {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                    aktszam = "";
+                }
+                double pi = Math.PI;
+                szam = pi;
+                aktszam = Convert.ToString(szam);
+                label1.Text = aktszam;
+                vanevesszo = true;
+            }
+            else if (muvelet_vane)
+            {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                    aktszam = "";
+                }
+                double pi = Math.PI;
+                szam = pi;
+                aktszam2 = Convert.ToString(szam);
+                label1.Text = aktszam2;
+                vanevesszo = true;
+
+            }
         }
 
         private void e_szam_Click(object sender, EventArgs e)
         {
-            double e_szam = Math.E;
-            szam = e_szam;
-            aktszam = Convert.ToString(szam);
-            label1.Text = aktszam;
+            if (!muvelet_vane)
+            {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                    aktszam = "";
+                }
+                double pi = Math.E;
+                szam = pi;
+                aktszam = Convert.ToString(szam);
+                label1.Text = aktszam;
+                vanevesszo = true;
+
+            }
+            else if (muvelet_vane)
+            {
+                if (label1.Text == "0")
+                {
+                    label1.Text = "";
+                    aktszam = "";
+                }
+                double pi = Math.E;
+                szam = pi;
+                aktszam2 = Convert.ToString(szam);
+                label1.Text = aktszam2;
+                vanevesszo = true;
+
+            }
         }
 
         private void clear_Click(object sender, EventArgs e)
@@ -74,8 +122,24 @@ namespace SzamoloGep_Beadando
         private void torles_Click(object sender, EventArgs e)
         {
             //el távolítja az utolsó számjegyet az aktuális számból
-            aktszam = aktszam.Remove(aktszam.Length - 1);
-            label1.Text = aktszam;
+            try
+            {
+                aktszam = aktszam.Remove(aktszam.Length - 1);
+                label1.Text = aktszam;
+                if (label1.Text == "")
+                {
+                    aktszam = "0";
+                    label1.Text = aktszam;
+
+                }
+            }
+            catch
+            {
+                aktszam = "0";
+                label1.Text = aktszam;
+
+            }
+
         }
 
         private void negyzet_Click(object sender, EventArgs e)
@@ -101,10 +165,17 @@ namespace SzamoloGep_Beadando
         {
             try
             {
-
-                double reciproka = 1 / Convert.ToDouble(aktszam);
-                aktszam = Convert.ToString(reciproka);
-                label1.Text = aktszam;
+                if (aktszam != "0")
+                {
+                    double reciproka = 1 / Convert.ToDouble(aktszam);
+                    aktszam = Convert.ToString(reciproka);
+                    label1.Text = aktszam;
+                }
+                else
+                {
+                    label1.Text = "Nullával nem lehet osztani";
+                }
+                
             }
             catch
             {
@@ -126,7 +197,8 @@ namespace SzamoloGep_Beadando
 
         private void mod_Click(object sender, EventArgs e)
         {
-
+            muvelet = "mod";
+            muvelet_vane = true;
         }
 
         private void sqrt_Click(object sender, EventArgs e)
@@ -342,7 +414,8 @@ namespace SzamoloGep_Beadando
 
         private void log_Click(object sender, EventArgs e)
         {
-            //?
+            muvelet = "log";
+            muvelet_vane = true;
         }
 
         private void egy_Click(object sender, EventArgs e)
@@ -425,7 +498,9 @@ namespace SzamoloGep_Beadando
 
         private void In_Click(object sender, EventArgs e)
         {
-            //?
+            double megoldas = Math.Log10(Convert.ToDouble(aktszam));
+            aktszam = Convert.ToString(megoldas);
+            label1.Text = aktszam;
         }
 
         private void button33_Click(object sender, EventArgs e)
@@ -433,9 +508,19 @@ namespace SzamoloGep_Beadando
             //előjel csere
             try
             {
-                double megoldas = Convert.ToDouble(aktszam) * -1;
-                aktszam = Convert.ToString(megoldas);
-                label1.Text = aktszam;
+                if (!muvelet_vane)
+                {
+                    double megoldas = Convert.ToDouble(aktszam) * -1;
+                    aktszam = Convert.ToString(megoldas);
+                    label1.Text = aktszam;
+                }
+                else if (muvelet_vane)
+                {
+                    double megoldas = Convert.ToDouble(aktszam2) * -1;
+                    aktszam2 = Convert.ToString(megoldas);
+                    label1.Text = aktszam2;
+                }
+                
             }
             catch
             {
@@ -482,7 +567,7 @@ namespace SzamoloGep_Beadando
             {
                 if (vanevesszo == false)
                 {
-                    aktszam += ",";
+                    aktszam2 += ",";
                     vanevesszo = true;
                     label1.Text = aktszam2;
                 }
@@ -555,6 +640,21 @@ namespace SzamoloGep_Beadando
                 aktszam = Convert.ToString(Math.Pow(a, b));
                 label1.Text = aktszam;
             }
+            else if (muvelet == "mod")
+            {
+                double a = Convert.ToDouble(aktszam);
+                double b = Convert.ToDouble(aktszam2);
+                aktszam = Convert.ToString(a % b);
+                label1.Text = aktszam;
+            }
+            else if (muvelet == "log")
+            {
+                double a = Convert.ToDouble(aktszam);
+                double b = Convert.ToDouble(aktszam2);
+                aktszam = Convert.ToString(Math.Log(a, b));
+                label1.Text = aktszam;
+            }
+            
         }
     }
 }
