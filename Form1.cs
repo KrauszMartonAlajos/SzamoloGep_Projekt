@@ -19,16 +19,18 @@ namespace SzamoloGep_Beadando
             label1.Text = "0";
 
         }
-        int eredmeny = 0;
-        string aktszam = "";
+        string aktszam = "0";
         string aktszam2 = "";
         double szam;
-        bool vz = true;
+        bool vanevesszo = false;
         string muvelet = "";
         bool muvelet_vane = false;
         private void ketto_nhatvanya_Click(object sender, EventArgs e)
         {
-            vz = !vz;
+
+            double megoldas = Math.Pow(2, Convert.ToDouble(aktszam));
+            aktszam = Convert.ToString(megoldas);
+            label1.Text = aktszam;
         }
 
         private void pi_Click(object sender, EventArgs e)
@@ -49,11 +51,24 @@ namespace SzamoloGep_Beadando
 
         private void clear_Click(object sender, EventArgs e)
         {
-            label1.Text = "";
-            aktszam = "";
-            aktszam2 = "";
-            muvelet_vane = false;
-            szam = 0;
+            if (label1.Text != "0")
+            {
+                label1.Text = "0";
+                aktszam = "0";
+                aktszam2 = "";
+                muvelet_vane = false;
+                szam = 0;
+                vanevesszo = false;
+            }
+            else 
+            {
+                aktszam = "";
+                aktszam2 = "";
+                muvelet_vane = false;
+                szam = 0;
+                vanevesszo = false;
+            }
+
         }
 
         private void torles_Click(object sender, EventArgs e)
@@ -76,10 +91,10 @@ namespace SzamoloGep_Beadando
                 //aktszam = "";
             }
             catch
-            { 
-                
+            {
+
             }
-            
+
         }
 
         private void reciprok_Click(object sender, EventArgs e)
@@ -92,8 +107,8 @@ namespace SzamoloGep_Beadando
                 label1.Text = aktszam;
             }
             catch
-            { 
-            
+            {
+
             }
         }
 
@@ -455,26 +470,21 @@ namespace SzamoloGep_Beadando
         {
             if (!muvelet_vane)
             {
-                if (label1.Text == "")
-                {
-                    label1.Text = "Apad";
-                }
-                else
+                if (vanevesszo == false)
                 {
                     aktszam += ",";
+                    vanevesszo = true;
                     label1.Text = aktszam;
                 }
-                
+
             }
             else if (muvelet_vane)
             {
-                if (label1.Text != "")
+                if (vanevesszo == false)
                 {
-                    aktszam2 += ",";
+                    aktszam += ",";
+                    vanevesszo = true;
                     label1.Text = aktszam2;
-                }
-                else
-                {
                 }
             }
         }
@@ -488,6 +498,7 @@ namespace SzamoloGep_Beadando
                 muvelet_vane = false;
                 MuveletElvegzese();
                 aktszam2 = "";
+                vanevesszo = false;
             }
             catch
             {
@@ -541,7 +552,7 @@ namespace SzamoloGep_Beadando
             {
                 double a = Convert.ToDouble(aktszam);
                 double b = Convert.ToDouble(aktszam2);
-                aktszam = Convert.ToString(Math.Pow(a,b));
+                aktszam = Convert.ToString(Math.Pow(a, b));
                 label1.Text = aktszam;
             }
         }
