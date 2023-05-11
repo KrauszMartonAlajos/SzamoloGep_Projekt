@@ -43,7 +43,7 @@ namespace SzamoloGep_Beadando
 
         private void pi_Click(object sender, EventArgs e)
         {
-            
+
             if (!muvelet_vane)
             {
                 if (label1.Text == "0")
@@ -116,7 +116,7 @@ namespace SzamoloGep_Beadando
                 szam = 0;
                 vanevesszo = false;
             }
-            else 
+            else
             {
                 aktszam = "";
                 aktszam2 = "";
@@ -195,13 +195,13 @@ namespace SzamoloGep_Beadando
                         aktszam2 = Convert.ToString(reciproka);
                         label1.Text = aktszam2;
                     }
-                    
+
                 }
                 else
                 {
                     label1.Text = "Nullával nem lehet osztani";
                 }
-                
+
             }
             catch
             {
@@ -223,7 +223,7 @@ namespace SzamoloGep_Beadando
                 aktszam2 = Convert.ToString(absszam);
                 label1.Text = aktszam2;
             }
-            
+
         }
 
         private void exp_Click(object sender, EventArgs e)
@@ -251,7 +251,7 @@ namespace SzamoloGep_Beadando
                 aktszam2 = Convert.ToString(Math.Sqrt(Convert.ToDouble(aktszam2)));
                 label1.Text = aktszam2;
             }
-            
+
         }
 
         private void zarjel_sad_Click(object sender, EventArgs e)
@@ -579,7 +579,7 @@ namespace SzamoloGep_Beadando
                     aktszam2 = Convert.ToString(megoldas);
                     label1.Text = aktszam2;
                 }
-                
+
             }
             catch
             {
@@ -608,7 +608,7 @@ namespace SzamoloGep_Beadando
 
                     }
                 }
-                else 
+                else
                 {
                     aktszam2 += "0";
                 }
@@ -724,7 +724,10 @@ namespace SzamoloGep_Beadando
             {
                 label1.Text = aktszam;
             }
-            
+
         }
     }
 }
+//összes hiba:
+//egy művelet után egyenlőséget kell nyomni hogy megfelelő legyen a műkdés
+//ha ez első szám amivel műveletet akarunk végezni az 0 akkor nem fogja szeretni ezért 0,0-t kell megadni ha 0-ból szeretnénk pl kivonni
