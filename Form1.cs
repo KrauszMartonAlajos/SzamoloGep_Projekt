@@ -558,7 +558,7 @@ namespace SzamoloGep_Beadando
             {
                 if (aktszam2.Length > 0)
                 {
-                    if (aktszam2[0] != '0')
+                    if (aktszam2[0] != '0' || vanevesszo)
                     {
                         aktszam2 += "0";
 
